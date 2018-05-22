@@ -34,10 +34,10 @@ module OneContact
       allow do
         origins '*'
         resource '*',
-                 headers: :any,
-                 methods: %i(get post patch delete options head)
-
+             headers: :any,
+             methods: %i(get post patch delete options head)
       end
     end
+    config.middleware.use Rack::Attack
   end
 end
